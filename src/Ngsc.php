@@ -4,7 +4,8 @@ namespace Unicodeveloper\Ngsc;
 
 use GuzzleHttp\Client;
 
-class Ngsc {
+class Ngsc
+{
 
     /**
      * Instance of GuzzleHttp
@@ -23,7 +24,7 @@ class Ngsc {
      * Source: http://states-cities.devcenter.co/
      * @var string
      */
-    protected $baseUrl = 'http://states-cities.devcenter.co/api/v1';
+    protected $baseUrl = 'http://locationsng-api.herokuapp.com/api/v1';
 
     public function __construct()
     {
@@ -67,7 +68,7 @@ class Ngsc {
      */
     public function getOneState($state)
     {
-        $this->setResponse("/state/{$state}");
+        $this->setResponse("/states/{$state}");
 
         return $this->data();
     }
@@ -79,7 +80,7 @@ class Ngsc {
      */
     public function getLGAS($state)
     {
-        $this->setResponse("/state/{$state}/lgas");
+        $this->setResponse("/states/{$state}/lgas");
 
         return $this->data();
     }
@@ -91,7 +92,7 @@ class Ngsc {
      */
     public function getCities($state)
     {
-        $this->setResponse("/state/{$state}/cities");
+        $this->setResponse("/states/{$state}/cities");
 
         return $this->data();
     }
@@ -108,12 +109,12 @@ class Ngsc {
 
         if (is_array($result)) {
             foreach ($result as $key => $value) {
-                $simplifiedResult[$key] = (array)$value;
+                $simplifiedResult[$key] = (array) $value;
             }
 
             return $simplifiedResult;
         }
 
-        return (array)$result;
+        return (array) $result;
     }
 }
