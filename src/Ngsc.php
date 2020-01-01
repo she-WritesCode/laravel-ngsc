@@ -62,6 +62,17 @@ class Ngsc
     }
 
     /**
+     * Get an associative array of all the states and their cities
+     * @return array
+     */
+    public function getAllLgas()
+    {
+        $this->setResponse('/lgas');
+
+        return $this->data();
+    }
+
+    /**
      * Get the details of a state
      * @param  string $state
      * @return array

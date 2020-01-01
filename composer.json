@@ -1,7 +1,7 @@
 {
   "name": "she-writescode/laravel-ngsc",
   "description": "A Laravel 5 Package for providing a fluent API for states, lgas and cities in Nigeria",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "keywords": [
     "php",
     "github",
